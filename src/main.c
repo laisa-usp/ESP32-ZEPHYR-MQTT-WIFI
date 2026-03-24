@@ -24,8 +24,8 @@
 #define THINGSBOARD_TOKEN "ofv7vsbetj3lat80za0t"
 
 /* Wi-Fi Config */
-#define WIFI_SSID      "WifiMixi"
-#define WIFI_PASSWORD  "gigoloeuropeu"
+#define WIFI_SSID      "SEU NOME DE REDE WIFI"
+#define WIFI_PASSWORD  "SUA SENHA"
 
 static struct net_mgmt_event_callback wifi_cb;
 static struct net_mgmt_event_callback ipv4_cb;
@@ -37,9 +37,10 @@ static bool dhcp_ok = false;
 static char gateway_ip[NET_IPV4_ADDR_LEN];
 
 /* ===== IPv4 / DHCP callback ===== */
-static void ipv4_event_handler(struct net_mgmt_event_callback *cb,
-                               uint64_t mgmt_event,
-                               struct net_if *iface)
+static void ipv4_event_handler( struct net_mgmt_event_callback *cb,
+                                               uint64_t mgmt_event,
+                                               struct net_if *iface
+							                   )
 {
     ARG_UNUSED(cb);
 
@@ -77,8 +78,8 @@ static void ipv4_event_handler(struct net_mgmt_event_callback *cb,
 
 /* ===== Wi-Fi callback ===== */
 static void wifi_event_handler(struct net_mgmt_event_callback *cb,
-                               uint64_t mgmt_event,
-                               struct net_if *iface)
+                                            uint64_t mgmt_event,
+                                            struct net_if *iface)
 {
     const struct wifi_status *status =
         (const struct wifi_status *)cb->info;
@@ -138,7 +139,7 @@ static void wifi_event_handler(struct net_mgmt_event_callback *cb,
     printk("Unhandled Wi-Fi event\n");
 }
 
-/*teste de socket tp*/
+/*===TCP socket testing===*/
 static int test_tcp_connect(const char *host, uint16_t port)
 {
     int ret;
