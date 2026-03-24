@@ -17,6 +17,9 @@ A configuração de rede e do MQTT broker está hard coded no main.c:
 
 #define WIFI_PASSWORD  "SUA SENHA"
 
-O tópico MQTT utilizado é: "v1/devices/me/telemetry".
+/* Payload MQTT */
+"{\"temperature\":25,\"humidity\":60}"
 
-A qualidade de serviço utilizada neste exemplo é de nível 0: MQTT_QOS_0_AT_MOST_ONCE.
+Em tb_mqtt.c estão definidos:
+> o tópico MQTT utilizado: "v1/devices/me/telemetry".
+> a qualidade de serviço utilizada neste exemplo: nível 0 (MQTT_QOS_0_AT_MOST_ONCE).
