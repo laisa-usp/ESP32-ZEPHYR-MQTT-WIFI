@@ -270,18 +270,18 @@ int main(void)
 
     printk("Starting ping to gateway...\n");
     /* ping(gateway_ip, 4);*/
-    ping("192.168.9.192", 4);
+    ping(THINGSBOARD_HOST, 4);
 
 k_sleep(K_SECONDS(1));
 
     printk("Starting ping to gateway...\n");
     /* ping(gateway_ip, 4);*/
-    ping("192.168.9.192", 4);
+    ping(THINGSBOARD_HOST, 4);
 
 k_sleep(K_SECONDS(1));
 
     printk("Starting TCP test to ThingsBoard host...\n");
-    ret = test_tcp_connect("192.168.9.192", 1883);
+    ret = test_tcp_connect(THINGSBOARD_HOST, THINGSBOARD_PORT);
     printk("TCP test ret=%d\n", ret);
 
 k_sleep(K_SECONDS(1));
